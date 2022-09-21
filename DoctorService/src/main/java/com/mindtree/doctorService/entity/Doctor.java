@@ -27,6 +27,7 @@ public class Doctor {
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //	private long id;
+	//@Table(name = "Doctor_TB2")
 	
 	private String name;
 	private int age;
