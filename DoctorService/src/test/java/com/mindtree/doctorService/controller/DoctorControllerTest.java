@@ -51,13 +51,7 @@ public class DoctorControllerTest {
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
 		String data = result.getResponse().getContentAsString();
-		// System.out.println(data);
 		JSONArray jsonArr = new JSONArray(data);
-
-//		for (int i = 0; i < jsonArr.length(); i++) {
-//			JSONObject jsonObj = jsonArr.getJSONObject(i);
-//			System.out.println(jsonObj);
-//		}
 
 		// then
 		assertEquals(HttpStatus.OK.value(), result.getResponse().getStatus());
