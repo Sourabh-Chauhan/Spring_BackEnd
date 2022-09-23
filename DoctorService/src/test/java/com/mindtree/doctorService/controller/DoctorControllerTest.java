@@ -54,15 +54,17 @@ public class DoctorControllerTest {
 		// System.out.println(data);
 		JSONArray jsonArr = new JSONArray(data);
 
-		for (int i = 0; i < jsonArr.length(); i++) {
-			JSONObject jsonObj = jsonArr.getJSONObject(i);
-			// System.out.println(jsonObj);
-		}
+//		for (int i = 0; i < jsonArr.length(); i++) {
+//			JSONObject jsonObj = jsonArr.getJSONObject(i);
+//			System.out.println(jsonObj);
+//		}
 
 		// then
 		assertEquals(HttpStatus.OK.value(), result.getResponse().getStatus());
 		assertEquals(2, jsonArr.length());
 		String expected = "[{\"id\":\"Doc_00000\",\"name\":\"Hemant Kumar Chauhan\",\"age\":59,\"gender\":\"Male\",\"specialist\":\"Medical Jurist\",\"numberOfpatientAttened\":1},{\"id\":\"Doc_00001\",\"name\":\"PK Saksena\",\"age\":55,\"gender\":\"Male\",\"specialist\":\" Medicines\",\"numberOfpatientAttened\":0}]";
+		
+		//(String expectedStr, String actualStr, boolean strict  )
 		JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
 	}
 
